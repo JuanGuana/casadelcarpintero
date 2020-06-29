@@ -11,7 +11,80 @@ Updated: 2020-06-22 09:37:07
 
 */
 
-#menu-prinicipal-abajo {
-	position: absolute;
-	bottom: 0;
+.carrito-compras {
+  border: 1px solid;
+  border-radius: 20px;
+  background: white;
+  color: #422915;
+  font-family: Raleway;
+}
+
+.subtotal,
+.cupones,
+.envio {
+  display: grid;
+  grid-template-columns: 70% auto;
+}
+
+.subtotal {
+  color: #422915;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 25px 20px 25px 40px;
+}
+.subtotal .col1,
+.cupones .col1 {
+  text-transform: uppercase;
+}
+.subtotal .col2,
+.cupones .col2 {
+  font-family: Helvetica;
+  text-align: right;
+}
+
+.envio {
+  background: #b9b5b5;
+  color: white;
+  font-size: 18px;
+  padding: 25px 20px 25px 40px;
+}
+
+.envio .titulo {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.envio .col2 {
+  font-family: Helvetica;
+  font-weight: bold;
+  color: #422915;
+  text-align: right;
+}
+
+.total {
+  background: #422915;
+  padding: 25px;
+  border-radius: 0 0 20px 20px;
+}
+
+.total .precio {
+  color: #f7941d;
+  font-size: 35px;
+  text-align: center;
+  padding-bottom: 25px;
+  font-family: Helvetica;
+  font-weight: bold;
+}
+
+.total .finalizar-compra {
+  background: #f7941d;
+  border: 1px #f7941d solid;
+  border-radius: 20px;
+  color: white;
+  padding: 10px 44px 10px 44px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3.2px;
 }
