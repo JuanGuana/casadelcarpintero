@@ -59,3 +59,32 @@ function remover_botones_pago_formulario_carrito_compras()
     remove_action('woocommerce_proceed_to_checkout', array('display_paypal_button'), 20);
 }
 add_action('woocommerce_proceed_to_checkout', 'remover_botones_pago_formulario_carrito_compras');
+
+
+/* Juank*/
+
+add_action(  'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash',5);
+
+add_filter( 'woocommerce_sale_flash', function( $texto ) {
+ $imagen = '<img src="https://www.pngkey.com/png/full/931-9319435_oferta-naranja-ecolgica-.png" alt="Oferta" height="50" width="50" class="oferta">';
+ return $imagen;
+}, 10, 1 );
+
+remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price');
+add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_price',5);
+
+add_action( 'woocommerce_before_shop_loop_item_title', 'dev_designs_show_sku', 5 );
+function dev_designs_show_sku(){
+    global $product;
+    echo '<div class="sku">' . $product->get_sku() . '</div>';
+}
+
+
+
+/*remove_action(  'woocommerce_after_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash',-10);
+add_action(  'woocommerce_before_shop_loop_item', 'woocommerce_show_product_loop_sale_flash',-5);
+
+add_filter( 'woocommerce_sale_flash', function( $texto ) {
+ $imagen = '<img src="https://www.pngfind.com/pngs/m/604-6040147_oferta-logo-bp-gas-station-logo-hd-png.png" alt="Oferta" height="50" width="50" class="oferta">';
+ return $imagen;
+}, 10, 1 );
