@@ -24,14 +24,15 @@ Updated: 2020-06-22 09:37:07
 .envio {
   display: grid;
   grid-template-columns: 70% auto;
+  padding: 25px 20px 25px 40px;
 }
 
 .subtotal {
   color: #422915;
   font-size: 18px;
   font-weight: bold;
-  padding: 25px 20px 25px 40px;
 }
+
 .subtotal .col1,
 .cupones .col1 {
   text-transform: uppercase;
@@ -42,11 +43,11 @@ Updated: 2020-06-22 09:37:07
   text-align: right;
 }
 
-.envio {
+.envio,
+.cupones {
   background: #b9b5b5;
   color: white;
   font-size: 18px;
-  padding: 25px 20px 25px 40px;
 }
 
 .envio .titulo {
@@ -65,6 +66,9 @@ Updated: 2020-06-22 09:37:07
   background: #422915;
   padding: 25px;
   border-radius: 0 0 20px 20px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .total .precio {
@@ -87,4 +91,116 @@ Updated: 2020-06-22 09:37:07
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 3.2px;
+  text-decoration: none !important;
+}
+
+/*estilo del input del cupón- Carrito compras*/
+.input-cupon {
+  text-align: center !important;
+  font: Bold 16px/19px Raleway !important;
+  letter-spacing: 0px !important;
+  color: #b9b5b5 !important;
+  background: #ffffff 0% 0% no-repeat padding-box !important;
+  border: 1px solid #707070 !important;
+  border-radius: 20px !important;
+  opacity: 1 !important;
+  padding: 20px 28px !important;
+  text-transform: uppercase !important;
+  padding: 20px 28px;
+}
+
+.boton-aplicar-cupon {
+  background: #b9b5b5 0% 0% no-repeat padding-box;
+  opacity: 1;
+  text-align: center;
+  font: Black 16px/19px Raleway;
+  letter-spacing: 3.2px;
+  color: #ffffff;
+  opacity: 1;
+  text-transform: uppercase;
+  border: 0px solid;
+  border-radius: 40px;
+  padding: 5px 28px;
+}
+
+.boton-actualizar-carrito {
+  background: #f7941d 0% no-repeat padding-box;
+  opacity: 1 !important;
+  text-align: center;
+  font: Black 16px/19px Raleway;
+  letter-spacing: 3.2px;
+  color: #ffffff;
+  opacity: 1;
+  text-transform: uppercase;
+  border: 0px solid;
+  border-radius: 40px;
+  padding: 5px 28px;
+}
+
+/*Sección correspondiente a la página de carrito de compras*/
+.seccion-carrito-compras {
+  background: #ededed;
+  border: 0px solid;
+  border-radius: 20px;
+  margin: 35px 0px;
+}
+
+table:not(.has-background) th,
+table:not(.has-background) tbody td,
+table:not(.has-background) tbody tr:nth-child(2n) td {
+  background-color: #ededed;
+}
+
+table.cart td.product-remove,
+table.cart td.actions {
+  border-top-color: #ededed !important;
+}
+
+.input-text {
+  background-color: #fff !important;
+  color: #b9b5b5 !important;
+  font-family: Helvetica !important;
+  font-weight: bold !important;
+  font-size: 16px !important;
+}
+
+.titulo-tabla {
+  text-align: center;
+  font-size: 16px;
+  font-family: Raleway;
+  font-weight: bold;
+  letter-spacing: 0px;
+  color: #422915;
+  opacity: 1;
+  text-transform: uppercase;
+}
+
+.titulo-tabla-productos {
+  text-align: left;
+  font-size: 28px;
+  font-family: Raleway;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  color: #422915;
+  opacity: 1;
+}
+
+a.remove::before {
+  color: #422915 !important;
+}
+
+table.shop_table_responsive tbody tr td {
+  text-align: center;
+  font: Bold 16px/19px Helvetica;
+  letter-spacing: 0px;
+  color: #b9b5b5;
+  opacity: 1;
+}
+
+table.cart td.product-name {
+  text-align: left;
+  font: Bold 16px/19px Raleway;
+  letter-spacing: 0px;
+  color: #b9b5b5;
+  opacity: 1;
 }
