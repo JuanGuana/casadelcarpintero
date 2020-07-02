@@ -205,7 +205,7 @@ table.cart td.product-name {
   opacity: 1;
 }
 
-/*Juank*/
+/*Juank Estilos de la pagina de pruducto*/
 
 .site-main ul.products.columns-3 li.product {
   display: flex;
@@ -215,26 +215,25 @@ table.cart td.product-name {
   border-radius: 20px;
 }
 
-ul.products li.product img,
-ul.products .wc-block-grid__product img,
-.wc-block-grid__products li.product img,
-.wc-block-grid__products .wc-block-grid__product img {
-  display: block;
-  margin: 0 auto;
-  padding: 0;
-}
+/*ul.products li.product .woocommerce-LoopProduct-link {
+  display: flex;
+  position: relative;
+}*/
 
 ul.products li.product img {
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
+  margin: 0 !important;
 }
 
 .sku {
+  margin: 10px 10px;
   position: absolute;
 }
 
 .oferta {
   position: absolute;
+  left: 80%;
 }
 
 ul.products li.product h2,
