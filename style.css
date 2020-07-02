@@ -166,18 +166,19 @@ table.cart td.actions {
 
 .titulo-tabla {
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
   font-family: Raleway;
   font-weight: bold;
   letter-spacing: 0px;
   color: #422915;
   opacity: 1;
   text-transform: uppercase;
+  padding: 0 !important;
 }
 
 .titulo-tabla-productos {
   text-align: left;
-  font-size: 28px;
+  font-size: 22px;
   font-family: Raleway;
   font-weight: bolder;
   letter-spacing: 2px;
@@ -203,4 +204,35 @@ table.cart td.product-name {
   letter-spacing: 0px;
   color: #b9b5b5;
   opacity: 1;
+}
+
+.widget select {
+  max-width: 100%;
+  background: #f7941d 0% 0% no-repeat padding-box;
+  opacity: 1;
+  padding: 9px 90px 9px 24px;
+  border: 0px solid;
+  border-radius: 20px;
+  text-align: left;
+  letter-spacing: px;
+  color: #ffffff;
+  opacity: 1;
+  font-size: 14px;
+  font-family: Raleway;
+}
+
+/*Header*/
+
+@media (min-width: 768px) {
+  .woocommerce-active .site-header .main-navigation {
+    width: 100%;
+    float: left;
+    margin-right: 4.347826087%;
+    clear: both;
+  }
+
+  .primary-navigation {
+    display: grid;
+    justify-content: right !important;
+  }
 }
