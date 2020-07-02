@@ -66,3 +66,26 @@ function remover_botones_pago_formulario_carrito_compras()
 	remove_action('woocommerce_proceed_to_checkout', array('display_paypal_button'), 20);
 }
 add_action('woocommerce_proceed_to_checkout', 'remover_botones_pago_formulario_carrito_compras');
+
+
+/* Juank*/
+
+// Agregamos el icono de oferta en la parte superior del item
+add_action(  'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash',5);
+add_filter( 'woocommerce_sale_flash', function( $texto ) {
+ $imagen = '<img src="https://www.pngkey.com/png/full/931-9319435_oferta-naranja-ecolgica-.png" alt="Oferta" height="50" width="50" class="contenedor oferta">';
+ return $imagen;
+}, 10, 1 );
+
+
+// Movemos el precio del item antes de el titulo del item
+remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price');
+add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_price',5);
+
+
+// Agregamos el campo sku de cada item
+add_action( 'woocommerce_before_shop_loop_item_title', 'mostrar_sku_contenido_producto', 5 );
+function mostrar_sku_contenido_producto(){
+   global $product;
+    echo '<div class="contenedor sku">' . $product->get_sku() . '</div>';
+}
