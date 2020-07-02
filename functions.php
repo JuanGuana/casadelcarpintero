@@ -79,20 +79,6 @@ add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_price
 // Agregamos el campo sku de cada item
 add_action( 'woocommerce_before_shop_loop_item_title', 'mostrar_sku_contenido_producto', 5 );
 function mostrar_sku_contenido_producto(){
-    global $product;
+   global $product;
     echo '<div class="contenedor sku">' . $product->get_sku() . '</div>';
 }
-
-
-
- 
-
-
-
-/*remove_action(  'woocommerce_after_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash',-10);
-add_action(  'woocommerce_before_shop_loop_item', 'woocommerce_show_product_loop_sale_flash',-5);
-
-add_filter( 'woocommerce_sale_flash', function( $texto ) {
- $imagen = '<img src="https://www.pngfind.com/pngs/m/604-6040147_oferta-logo-bp-gas-station-logo-hd-png.png" alt="Oferta" height="50" width="50" class="oferta">';
- return $imagen;
-}, 10, 1 );
