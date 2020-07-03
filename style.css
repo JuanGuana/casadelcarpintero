@@ -206,7 +206,6 @@ table.cart td.product-name {
   opacity: 1;
 }
 
-<<<<<<< HEAD
 .widget select {
   max-width: 100%;
   background: #f7941d 0% 0% no-repeat padding-box;
@@ -220,6 +219,58 @@ table.cart td.product-name {
   opacity: 1;
   font-size: 14px;
   font-family: Raleway;
+}
+.storefront-sorting select {
+  width: auto;
+  background: #f7941d 0% 0% no-repeat padding-box;
+  opacity: 1;
+  padding: 9px 9px 9px 24px;
+  border: 0px solid;
+  border-radius: 20px;
+  text-align: left;
+  letter-spacing: px;
+  color: #ffffff;
+  opacity: 1;
+  font-size: 14px;
+  font-family: Raleway;
+}
+
+.woocommerce-result-count {
+  float: left;
+  position: relative;
+  margin-bottom: 0;
+  padding: 1em 0 !important;
+  text-align: center;
+  font: 14px Raleway;
+  letter-spacing: 0px;
+  color: #b9b5b5;
+  opacity: 1;
+}
+
+.pagination,
+.woocommerce-pagination {
+  padding: 0.4em 0 !important;
+}
+.woocommerce-pagination .page-numbers li .page-numbers.current {
+  background-color: #422915 !important;
+  color: #b9b5b5 !important;
+  border-radius: 56px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 18px;
+  padding: 2px 6px !important;
+  text-align: center;
+}
+
+.woocommerce-pagination .page-numbers li .page-numbers:not(.current) {
+  color: #f7941d !important;
+  font-size: 14px;
+  font-weight: 500;
+  background: none;
+}
+
+.hentry .entry-content a {
+  text-decoration: none;
 }
 
 /*Header*/
@@ -236,7 +287,7 @@ table.cart td.product-name {
     display: grid;
     justify-content: right !important;
   }
-=======
+}
 /*Juank Estilos de la pagina de pruducto*/
 
 .site-main ul.products.columns-3 li.product {
@@ -314,5 +365,4 @@ ul.products li.product .woocommerce-loop-product__title {
   margin: 10px 25px 10px 25px !important;
   padding: 1px;
   padding: 0 10% 0 10%;
->>>>>>> 9d1bdde682d0abc6d2b08c1420749bd2583995bc
 }
