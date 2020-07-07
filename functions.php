@@ -83,57 +83,14 @@ function mostrar_sku_contenido_producto(){
     echo '<div class="contenedor sku">' . $product->get_sku() . '</div>';
 }
 
-// Mostrar solo el precio mas bajo de productos variables
-add_filter( 'woocommerce_variable_sale_price_html', 'wc_custom_variation_price_format', 10, 2 );
-add_filter( 'woocommerce_variable_price_html', 'wc_custom_variation_price_format', 10, 2 );
 
-function wc_custom_variation_price_format( $price, $product ) {
-
-  // Precio principal
-  $prices = array( $product->get_variation_price( 'min', true ), $product->get_variation_price( 'max', true ) );
-  $price = $prices[0] !== $prices[1] ? sprintf( __( '%1$s', 'woocommerce' ), wc_price( $prices[0] ) ) : wc_price( $prices[0] );
-
-  // Precio de oferta
-  $prices = array( $product->get_variation_regular_price( 'min', true ), $product->get_variation_regular_price( 'max', true ) );
-  sort( $prices );
-  $saleprice = $prices[0] !== $prices[1] ? sprintf( __( '%1$s', 'woocommerce' ), wc_price( $prices[0] ) ) : wc_price( $prices[0] );
-
-  if ( $price !== $saleprice ) {
-	//$price = '<del>' . $saleprice . $product->get_price_suffix() . '</del> <ins>' . $price . $product->get_price_suffix() . '</ins>';
-	$price = '<ins>' . $price . $product->get_price_suffix() . '</ins>  <span class="msj oferta">ANTES </span> <del>' . $saleprice . $product->get_price_suffix() . '</del>';
-  }
-  return $price;
+// Mostrar precio de oferta solo en productos simples
+add_filter( 'woocommerce_get_price_html', 'wpa83367_price_html', 100, 2 );
+function wpa83367_price_html( $price, $product ) {
+    if (! $product->is_type( 'variable' ) &&  $product->is_on_sale()) {
+        //$price = '<span class="msj oferta">ANTES </span>' . str_replace( '<ins>', '<ins>', $price );
+        $price = '<div class= "single-price"><ins>$' . $product->get_price() . ' </ins>  <span class="msj oferta">ANTES</span> <del>$' . $product->get_sale_price() . '</del></div>';
+        return $price;
+    }
+    return $price;
 }
-
-// Mostrar texto antes del precio
-/* add_filter( 'woocommerce_get_price_html', 'custom_price_message' );
-function custom_price_message( $price ) {
-	global $post;
-	$product_id = $post->ID;
-	$textafter = ' Desde'; 
-	return $price . '<span class="textafter">' . $textafter . '</span>';
-} */
-
-
-
-
-/* Poner texto antes y despues del precio */
-/* add_filter( 'woocommerce_format_sale_price', 'filter_function_name', 10, 3 );
-function filter_function_name( $price, $regular_price, $sale_price ) { 
- $regular_price = 'Antes: '. wc_price( $regular_price);
- $sale_price = 'Ahora: ' . wc_price( $sale_price);
- $price = $regular_price . ' - '. $sale_price;
- return $price; 
-};
- */
-
-
-
-
-/* function custom_price_message( $price ) {
-global $post;
-$product_id = $post->ID;
-$textbefore = 'Desde'; //texto que vamos agregar
-return '<span class="textbefore">' . $textbefore . '</span>' .$price; //class textbefore para el CSS
-}
-add_filter( 'woocommerce_get_price_html', 'custom_price_message' ); */

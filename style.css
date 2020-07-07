@@ -263,6 +263,13 @@ ul.products li.product .price {
   width: 100%;
 }
 
+.single-price {
+  display: flex !important;
+  width: 80%;
+  align-items: center;
+  justify-content: space-around;
+}
+
 ul.products li.product .price,
 .price ins {
   margin-left: 0 !important;
@@ -284,7 +291,7 @@ ul.products li.product .price,
 .msj.oferta {
   font-size: 11px;
   font-weight: 700;
-  width: 52px;
+  width: 62px;
   text-align: right;
   color: #b9b5b5;
 }
