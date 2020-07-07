@@ -61,6 +61,37 @@ function remover_botones_pago_formulario_carrito_compras()
 add_action('woocommerce_proceed_to_checkout', 'remover_botones_pago_formulario_carrito_compras');
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Juank*/
 
 // Agregamos el icono de oferta en la parte superior del item
