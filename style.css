@@ -273,6 +273,14 @@ table.cart td.product-name {
   text-decoration: none;
 }
 
+/*Estilos del widget de carrito de compras*/
+.widget_shopping_cart .product_list_widget li a.remove {
+  position: absolute;
+  top: 1em;
+  left: revert !important;
+  opacity: 1;
+  right: 0px !important;
+}
 /*Header*/
 
 @media (min-width: 768px) {
