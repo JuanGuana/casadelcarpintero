@@ -68,6 +68,37 @@ function remover_botones_pago_formulario_carrito_compras()
 add_action('woocommerce_proceed_to_checkout', 'remover_botones_pago_formulario_carrito_compras');
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Juank*/
 
 // Agregamos el icono de oferta en la parte superior del item
@@ -88,4 +119,16 @@ add_action( 'woocommerce_before_shop_loop_item_title', 'mostrar_sku_contenido_pr
 function mostrar_sku_contenido_producto(){
    global $product;
     echo '<div class="contenedor sku">' . $product->get_sku() . '</div>';
+}
+
+
+// Mostrar precio de oferta solo en productos simples
+add_filter( 'woocommerce_get_price_html', 'wpa83367_price_html', 100, 2 );
+function wpa83367_price_html( $price, $product ) {
+    if (! $product->is_type( 'variable' ) &&  $product->is_on_sale()) {
+        //$price = '<span class="msj oferta">ANTES </span>' . str_replace( '<ins>', '<ins>', $price );
+        $price = '<div class= "single-price"><ins>$' . $product->get_price() . ' </ins>  <span class="msj oferta">ANTES</span> <del>$' . $product->get_sale_price() . '</del></div>';
+        return $price;
+    }
+    return $price;
 }
