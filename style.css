@@ -250,6 +250,7 @@ table.cart td.product-name {
 .pagination,
 .woocommerce-pagination {
   padding: 0.4em 0 !important;
+  margin-top: 0 !important;
 }
 .woocommerce-pagination .page-numbers li .page-numbers.current {
   background-color: #422915 !important;
@@ -303,7 +304,6 @@ table.cart td.product-name {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #d4d4d4;
   border-radius: 20px;
   margin-right: 15px !important;
   margin-bottom: 20px !important;
@@ -313,8 +313,7 @@ ul.products li.product .woocommerce-LoopProduct-link {
   display: flex !important;
   flex-direction: column;
   align-items: center;
-  background: #d4d4d4;
-  position: relative;
+  background: #b9b5b5;
   border-radius: 20px;
 }
 
@@ -365,9 +364,10 @@ ul.products li.product .price,
 .price ins {
   margin-left: 0 !important;
   text-align: left;
-  font-size: 30px;
+  font-size: 25px;
   letter-spacing: 0px;
   color: #f7941d;
+  font-weight: 600 !important;
 }
 
 .price del {
@@ -395,14 +395,13 @@ ul.products li.product .price,
 
 ul.products li.product h2,
 ul.products li.product .woocommerce-loop-product__title {
-  display: flex;
-  align-content: center;
-  width: 146px;
-  height: 72px;
   margin-bottom: 0 !important;
   text-align: left;
   letter-spacing: 0px;
-  color: #ffffff;
+  color: #ffffff !important;
+  padding: 20px 15px;
+  font-size: 15px !important;
+  font-weight: 400 !important;
 }
 
 .button {
