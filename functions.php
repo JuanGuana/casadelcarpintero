@@ -127,7 +127,7 @@ add_filter( 'woocommerce_get_price_html', 'wpa83367_price_html', 100, 2 );
 function wpa83367_price_html( $price, $product ) {
     if (! $product->is_type( 'variable' ) &&  $product->is_on_sale()) {
         //$price = '<span class="msj oferta">ANTES </span>' . str_replace( '<ins>', '<ins>', $price );
-        $price = '<div class= "single-price"><ins>$' . $product->get_price() . ' </ins>  <span class="msj oferta">ANTES</span> <del>$' . $product->get_sale_price() . '</del></div>';
+        $price = '<div class= "single-price"><ins>$' . $product->get_regular_price() . ' </ins>  <span class="msj oferta">ANTES</span> <del>$' . $product->get_sale_price() . '</del></div>';
         return $price;
     }
     return $price;
